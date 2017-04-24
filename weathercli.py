@@ -9,7 +9,7 @@ import requests
 @click.option('--rh', default=0, help='Returns Current Humidity 0 or 1')
 @click.option('--con', default=0, help='Returns Current Weather Condition 0 or 1')
 def weather(zipp, temp, rh, con):
-    loc = ("http://api.wunderground.com/api/9394e65e04847b41/conditions/q/" + zipp + ".json")
+    loc = ("http://api.wunderground.com/api/YOURKEY/conditions/q/" + zipp + ".json")
     url1data = requests.get(loc)
     locdata = url1data.json()
     degf = (locdata['current_observation']['temp_f'])
